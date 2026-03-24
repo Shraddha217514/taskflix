@@ -1,0 +1,66 @@
+/* TaskList.css */
+.task-list { display: flex; flex-direction: column; gap: 32px; }
+
+.task-list__section {}
+
+.task-list__section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--nf-silver);
+  margin-bottom: 14px;
+}
+
+.task-list__section-line {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background: var(--nf-red);
+  border-radius: 2px;
+}
+
+.task-list__badge {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--nf-border);
+  color: var(--nf-gray-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.task-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 10px;
+}
+
+/* Empty state */
+.task-list__empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--nf-gray);
+}
+
+.task-list__empty-icon { font-size: 3.5rem; margin-bottom: 16px; opacity: 0.4; }
+.task-list__empty h3 { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 2px; color: var(--nf-gray-light); margin-bottom: 8px; }
+.task-list__empty p { font-size: 0.9rem; }
+
+/* Skeleton loader */
+.task-list__skeleton { display: flex; flex-direction: column; gap: 10px; }
+
+.task-list__skeleton-card {
+  height: 74px;
+  background: linear-gradient(90deg, var(--nf-surface) 25%, var(--nf-card) 50%, var(--nf-surface) 75%);
+  background-size: 200% 100%;
+  border-radius: var(--r-lg);
+  animation: shimmer 1.4s infinite;
+}
+
+@media (max-width: 700px) {
+  .task-list__grid { grid-template-columns: 1fr; }
+}

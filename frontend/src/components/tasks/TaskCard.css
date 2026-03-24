@@ -1,0 +1,196 @@
+/* TaskCard.css */
+.task-card {
+  position: relative;
+  background: var(--nf-card);
+  border: 1px solid var(--nf-border);
+  border-radius: var(--r-lg);
+  padding: 16px 16px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  overflow: hidden;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  animation: fadeIn 0.3s ease both;
+  cursor: default;
+}
+
+/* ✅ Smooth hover animation (added properly) */
+.task-card {
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.task-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* Existing hover */
+.task-card:hover {
+  background: var(--nf-hover);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.task-card--pinned {
+  border-color: rgba(229,9,20,0.35);
+  background: rgba(229,9,20,0.04);
+}
+
+.task-card--done {
+  opacity: 0.55;
+}
+
+/* Left accent bar */
+.task-card__priority-bar {
+  width: 3px;
+  align-self: stretch;
+  flex-shrink: 0;
+  background: var(--priority-color, #444);
+  border-radius: 0 2px 2px 0;
+  margin-right: 4px;
+}
+
+.task-card__body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Checkbox */
+.task-card__checkbox {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 2px solid var(--nf-gray);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--t-fast), background var(--t-fast);
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.task-card__checkbox:hover { 
+  border-color: var(--nf-green); 
+  background: rgba(70,211,105,0.1); 
+}
+
+.task-card__checkbox--checked {
+  background: var(--nf-green);
+  border-color: var(--nf-green);
+}
+
+/* Content */
+.task-card__content { 
+  flex: 1; 
+  min-width: 0; 
+}
+
+.task-card__text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--nf-silver);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+  transition: color var(--t-fast);
+}
+
+.task-card__text--done {
+  text-decoration: line-through;
+  color: var(--nf-gray);
+}
+
+.task-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-card__category {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--nf-gray);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--nf-border);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.task-card__icon { 
+  font-size: 0.75rem; 
+}
+
+.task-card__priority {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.task-card__date {
+  font-size: 0.65rem;
+  color: var(--nf-gray);
+}
+
+/* Actions */
+.task-card__actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  padding-right: 4px;
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+
+.task-card:hover .task-card__actions { 
+  opacity: 1; 
+}
+
+.task-card__action-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--nf-border);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--nf-gray);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t-fast);
+}
+
+.task-card__action-btn:hover { 
+  border-color: #fff; 
+  color: #fff; 
+  background: rgba(255,255,255,0.07); 
+}
+
+.task-card__action-btn--pinned {
+  background: var(--nf-red);
+  border-color: var(--nf-red);
+  color: #fff;
+  opacity: 1;
+}
+
+.task-card__action-btn--delete:hover {
+  background: var(--nf-red);
+  border-color: var(--nf-red);
+  color: #fff;
+}

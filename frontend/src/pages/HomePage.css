@@ -1,0 +1,17 @@
+/* HomePage.css */
+.home { min-height: 100vh; }
+
+.home__main {
+  padding: 40px 0 80px;
+}
+
+.home__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .home__main { padding: 24px 0 60px; }
+  .home__container { padding: 0 20px; }
+}
