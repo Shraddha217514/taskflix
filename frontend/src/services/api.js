@@ -1,5 +1,5 @@
 // src/services/api.js
-const BASE = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
+const BASE = process.env.REACT_APP_API_URL || 'https://my-to-do-list-nt06.onrender.com';
 
 async function request(path, options = {}) {
   try {
