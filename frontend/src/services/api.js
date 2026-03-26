@@ -16,9 +16,9 @@ async function request(path, options = {}) {
 }
 
 export const taskAPI = {
-  getAll: (params = '') => request(`/tasks${params}`),
-  getStats: () => request('/tasks/stats'),
-  create: (data) => request('/tasks', { method: 'POST', body: JSON.stringify(data) }),
-  update: (id, data) => request(`/tasks/${id}`, { method: 'PATCH', body: JSON.stringify(data) }),
-  delete: (id) => request(`/tasks/${id}`, { method: 'DELETE' }),
+  getAll: (params = '') => request(`/api/tasks${params}`),
+  getStats: () => request('/api/tasks/stats'),
+  create: (data) => request('/api/tasks', { method: 'POST', body: JSON.stringify(data) }),
+  update: (id, data) => request(`/api/tasks/${id}`, { method: 'PATCH', body: JSON.stringify(data) }),
+  delete: (id) => request(`/api/tasks/${id}`, { method: 'DELETE' }),
 };
