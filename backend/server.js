@@ -38,6 +38,6 @@ app.use((err, _req, res, _next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n✅  TaskFlix API running →http://localhost:10000${PORT}`);
+  console.log(`\n✅  TaskFlix API running →http://localhost:${PORT}`);
   console.log(`   Endpoints: /api/tasks | /api/health\n`);
 });
